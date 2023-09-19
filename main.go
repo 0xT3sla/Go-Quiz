@@ -46,6 +46,8 @@ func main() {
 	colorize(ColorBlue, banner)
 	csvFilename := flag.String("csv", "problems.csv", "Provide a csv file in the format of 'question,answer'")
 	flag.Parse()
+	timeLimit = flag.Int("time", 30, "Enter the time limit for your quiz game!")
+	flag.Parse()
 	file, err := os.Open(*csvFilename)
 	if err != nil {
 		msg := fmt.Sprintf("Failed to open file: <%s>, Please try again!", *csvFilename)
